@@ -44,6 +44,10 @@ SSH to OVM Manager
 
     $ vagrant ssh ovm_host
 
+SSH to NFS Server
+
+    $ vagrant ssh nfs_server_1
+
 ## Open Source
 
 This software is provided under the [Enterprise Modules Open Source license](../master/LICENSE.pdf). This means you are free to add your own features. We only support accepted pull requests, so if you want your own feature to be added and think it is useful for other customers, please submit a Pull Request.
