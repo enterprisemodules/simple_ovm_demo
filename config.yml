@@ -1,0 +1,15 @@
+db:
+  port: 49500
+  user: ovs # db schema name
+  password: Password123
+
+webLogic:
+  user: weblogic # a username
+  password: Password123
+
+OVMCore:
+  user: admin
+  password: Password123
+
+Certificate:
+  FQN: ovmm.example.com

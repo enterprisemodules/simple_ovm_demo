@@ -1,0 +1,16 @@
+/.vagrant
+/software
+/modules/concat
+/modules/easy_type
+/modules/stdlib
+.byebug_history
+/.librarian
+/.tmp
+/modules/archive
+/modules/dirtree
+/modules/ovm_config
+/modules/debconf
+/modules/software/files
+/modules/limits
+/modules/sysctl
+.DS_Store
