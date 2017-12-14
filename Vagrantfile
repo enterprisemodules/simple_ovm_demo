@@ -3,8 +3,8 @@
 
 # Vagrant file dedicated for development purposes
 # This setup creates 2 VMs
-# One ovm_host with installed manager IP 172.28.128.3
-# One ovm_server for management purposes IP 172.28.128.19
+# One OVM Host with installed manager IP 192.168.56.3
+# One NFS Server for management purposes IP 192.168.56.5
 
 Vagrant.configure(2) do |config|
   config.vm.define :ovm_host do |ovm_host|
@@ -23,7 +23,7 @@ Vagrant.configure(2) do |config|
 
     # Setup port forwarding
     ovm_host.vm.hostname = 'ovmm.example.com'
-    ovm_host.vm.network "private_network", ip: "172.28.128.3"
+    ovm_host.vm.network "private_network", ip: "192.168.56.3"
 
     # Hosts and fqdn settings
     ovm_host.vm.provision :shell, inline: <<-EOD.gsub(/^\s*/, '')
@@ -85,7 +85,7 @@ Vagrant.configure(2) do |config|
     nfs_server_1.vm.box = "openstack-user/nfs-server"
 
     nfs_server_1.vm.hostname = 'nfsserver1.example.com'
-    nfs_server_1.vm.network "private_network", ip: "172.28.128.49"
+    nfs_server_1.vm.network "private_network", ip: "192.168.56.5"
 
     # Disabled folder syncing
     nfs_server_1.vm.synced_folder '.', '/vagrant', disabled: true
