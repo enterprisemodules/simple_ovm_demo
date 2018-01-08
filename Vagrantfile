@@ -19,6 +19,9 @@ Vagrant.configure(2) do |config|
       v.customize ["modifyvm", :id, "--nicpromisc3", "allow-all"]
     end
 
+    # Add public network
+    ovm_host.vm.network "public_network"
+
     ovm_host.ssh.insert_key = false
 
     # Setup port forwarding
@@ -89,6 +92,11 @@ Vagrant.configure(2) do |config|
 
     # Disabled folder syncing
     nfs_server_1.vm.synced_folder '.', '/vagrant', disabled: true
+
+    nfs_server_1.vm.provision :shell, inline:  <<-EOD.gsub(/^\s*/, '')
+      mkdir /var/exports/cinder/repositories &&
+      chmod 777 /var/exports/cinder/repositories
+    EOD
 
     nfs_server_1.vm.provider "virtualbox" do |v|
       v.memory = 2048
