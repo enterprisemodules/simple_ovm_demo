@@ -81,6 +81,11 @@ Vagrant.configure(2) do |config|
       iptables -A INPUT -m state --state NEW -m tcp -p tcp --dport 15901 -j ACCEPT;
       iptables -A INPUT -m state --state NEW -m udp -p udp --dport 123 -j ACCEPT;
       service iptables save
+      systemctl enable firewalld
+      systemctl start firewalld
+      firewall-cmd --direct --add-rule ipv4 nat POSTROUTING 0 -o enp0s3 -j MASQUERADE
+      firewall-cmd --direct --add-rule ipv4 filter FORWARD 0 -i enp0s9 -o enp0s3 -j ACCEPT
+      firewall-cmd --direct --add-rule ipv4 filter FORWARD 0 -i enp0s3 -o enp0s9 -m state --state RELATED,ESTABLISHED -j ACCEPT
     EOD
   end
 
