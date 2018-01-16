@@ -1,0 +1,15 @@
+deployment_zone: vagrant
+
+role: role::ovm_manager
+
+# software_location: &software_location   puppet:///modules/software
+
+
+ovm_config::installovmm::source:      /mnt/iso
+ovm_config::installovmm::password:    &password Password123
+ovm_config::installovmm::fqdn:        ovmmgr.example.com
+profile::example_setup::password:     *password
+
+profile::router::inside_device:   enp0s9
+profile::router::outside_device:  enp0s3
+

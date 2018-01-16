@@ -1,0 +1,30 @@
+---
+pe-master:
+  public_ip:       '192.168.253.10'
+  cpucount:         2
+  ram:              3072
+  type:             pe-master
+ml-ovmmgr:
+  public_ip: '192.168.56.3'
+  cpucount: 2
+  ram:      3072
+  box:      mleonard87/oracle-linux-70-uek-x64
+  type:     masterless
+pe-ovmmgr:
+  public_ip: '192.168.56.3'
+  cpucount: 2
+  ram:      3072
+  box:      mleonard87/oracle-linux-70-uek-x64
+  type:     pe-agent
+ml-nfs01:
+  public_ip: '192.168.56.4'
+  cpucount: 1
+  ram:      1024
+  box:      mleonard87/oracle-linux-70-uek-x64
+  type:     masterless
+pe-nfs01:
+  public_ip: '192.168.56.4'
+  cpucount: 1
+  ram:      1024
+  box:      mleonard87/oracle-linux-70-uek-x64
+  type:     pe-agent

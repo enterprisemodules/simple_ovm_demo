@@ -1,0 +1,6 @@
+deployment_zone: vagrant
+
+role: role::nfs_server
+
+profile::nfs_server::exports:
+  - /exports/repos

@@ -1,0 +1,16 @@
+---
+version: 5
+
+defaults:
+  data_hash: yaml_data
+  datadir: hieradata
+
+hierarchy:
+  - name: 'Node data'
+    path: "nodes/%{::fqdn}.yaml"
+
+  - name: 'Deployment Zones'
+    path: "deployment_zones/%{deployment_zone}.yaml"
+
+  - name: 'Defaults'
+    path: defaults.yaml
