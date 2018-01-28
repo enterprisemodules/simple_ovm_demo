@@ -18,15 +18,8 @@ class profile::nfs_server(
     mode   => '0777',
   }
 
-  $services = ['nfs', 'mountd', 'rpc-bind']
-  $services.each |$service| {
-    firewalld_service { "Allow ${service} from the external zone":
-      ensure  => 'present',
-      service => $service,
-    }
-  }
-
-  Service{
+  service {'firewalld':
+    ensure   => 'stopped',
     provider => 'systemd'
   }
 
@@ -39,6 +32,4 @@ class profile::nfs_server(
     ensure  => 'unmounted',
     clients => '*(rw,sync,no_subtree_check,no_root_squash)',
   }
-
-
 }
