@@ -1,4 +1,6 @@
-# TODO: Add documentation
+#
+# Setup packages
+#
 class profile::base::packages()
 {
   $required_package = [

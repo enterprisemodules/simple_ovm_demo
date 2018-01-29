@@ -1,4 +1,6 @@
-# TODO: Add documentation
+#
+# Example class for ovm_demo
+#
 class profile::example()
 {
   contain ::profile::example::base_setup
