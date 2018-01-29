@@ -3,7 +3,7 @@ forge 'http://forge.enterprisemodules.com'
 # The Enterprise Modules Oracle specific Modules
 #
 mod 'enterprisemodules-easy_type',          '2.3.13'
-mod 'enterprisemodules/ovm_config',         '1.0.0'
+mod 'enterprisemodules/ovm_config',         '1.0.1'
 # Here are some generic modules
 mod 'puppetlabs-stdlib',                    '4.18.0'
 mod 'saz-limits',                           '3.0.2'
