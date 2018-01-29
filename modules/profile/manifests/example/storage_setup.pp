@@ -21,13 +21,14 @@ class profile::example::storage_setup()
     ]
   }
 
-  ->ovm_virtual_disk { 'default/repo01/CentOS-7-x86_64-Minimal-1708.iso':
-    ensure      => 'present',
-    description => 'minimal image of CentOS 7',
-    disk_type   => 'VIRTUAL_CDROM',
-    shareable   => true,
-    urls        => ['http://ftp.pbone.net/pub/centos/7/isos/x86_64/CentOS-7-x86_64-Minimal-1708.iso'],
-    async       => false,
-  }
+  # For the next version
+  # ->ovm_virtual_disk { 'default/repo01/CentOS-7-x86_64-Minimal-1708.iso':
+  #   ensure      => 'present',
+  #   description => 'minimal image of CentOS 7',
+  #   disk_type   => 'VIRTUAL_CDROM',
+  #   shareable   => true,
+  #   urls        => ['http://ftp.pbone.net/pub/centos/7/isos/x86_64/CentOS-7-x86_64-Minimal-1708.iso'],
+  #   async       => false,
+  # }
 
 }

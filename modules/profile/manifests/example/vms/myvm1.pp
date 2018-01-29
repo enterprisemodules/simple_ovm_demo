@@ -24,6 +24,6 @@ class profile::example::vms::myvm1()
     vm_mouse_type           => 'OS_DEFAULT',
     vm_run_state            => 'RUNNING',
     vm_start_policy         => 'BEST_SERVER',
-    virtual_disks           => ['0:repo01/CentOS-7-x86_64-Minimal-1708.iso', '1:repo01/vm01_disk']
+    virtual_disks           => ['0:repo01/vm01_disk']
   }
 }
