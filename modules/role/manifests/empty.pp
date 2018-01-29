@@ -1,0 +1,4 @@
+# Docs
+class role::empty()
+{
+}

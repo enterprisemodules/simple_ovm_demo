@@ -1,5 +1,7 @@
 #
-# Install Puppet using yum
+# Install correct puppet version
 #
-yum install -y --nogpgcheck https://yum.puppetlabs.com/puppet5/puppet5-release-el-7.noarch.rpm > /dev/null
-yum install -y --nogpgchec puppet git > /dev/null # 2>&1
+echo 'Installing puppet agent'
+rpm -q puppet5-release || yum install -y --nogpgcheck https://yum.puppetlabs.com/puppet5/puppet5-release-el-7.noarch.rpm > /dev/null
+rpm -q puppet-agent || yum install -y --nogpgcheck puppet-agent
+rpm -q git || yum install -y git

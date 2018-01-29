@@ -14,3 +14,9 @@
 /modules/limits
 /modules/sysctl
 .DS_Store
+/modules/timezone
+/modules/systemd
+/modules/augeasproviders_sysctl
+/modules/firewalld
+/modules/augeasproviders_core
+/modules/nfs
