@@ -1,4 +1,6 @@
-# TODO: Add documentation
+#
+# Create profile class
+#
 class profile(
   $download_dir,
   $source_dir,

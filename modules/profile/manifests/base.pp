@@ -1,4 +1,6 @@
-# TODO: Add documentation
+#
+# Get neccessary data
+#
 class profile::base()
 {
   contain "::profile::base::${::deployment_zone}"

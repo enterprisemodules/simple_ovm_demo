@@ -1,4 +1,6 @@
-# TODO: Add documentation
+#
+# Base setup for the ovm_config demo
+#
 class profile::example::base_setup(
   String $password,
 )

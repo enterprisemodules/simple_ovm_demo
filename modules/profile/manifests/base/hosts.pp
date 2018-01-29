@@ -1,4 +1,6 @@
-# TODO: Add documentation
+#
+# Setup servers hosts from vagrant.yaml
+#
 class profile::base::hosts(
   Hash $list,
 )

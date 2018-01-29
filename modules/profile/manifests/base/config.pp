@@ -1,4 +1,6 @@
-# TODO: Add documentation
+#
+# Configure timezone
+#
 class profile::base::config()
 {
   class { '::timezone':
