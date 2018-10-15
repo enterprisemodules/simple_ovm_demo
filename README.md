@@ -5,6 +5,7 @@ This module is used with conjunction of Oracle VM Manager to manage Oracle VM in
 ## Required Software
 
 - [Vagrant](https://www.vagrantup.com/)
+- [Vagrant Triggers Plugin](https://www.vagrantup.com/docs/triggers/)
 - [VirtualBox](https://www.virtualbox.org/)
 - Oracle VM ISOs (`V952527-01.iso`, `V952528-01.iso`, `V952529-01.iso`)
 
@@ -13,3 +14,4 @@ This module is used with conjunction of Oracle VM Manager to manage Oracle VM in
 - Put Oracle VM installation ISOs `V952527-01.iso`, `V952528-01.iso`, `V952529-01.iso` into `/software` directory
 
 Check our [blog post](https://www.enterprisemodules.com/blog/2018/01/how-to-manage-oracle-vm-with-puppet/) on how to get started.
+
