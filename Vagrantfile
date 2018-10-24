@@ -81,6 +81,9 @@ EOD
           run_remote  "bash /vagrant/vm-scripts/install_puppet.sh"
           run_remote  "bash /vagrant/vm-scripts/setup_puppet.sh"
           run_remote  "puppet apply /etc/puppetlabs/code/environments/production/manifests/site.pp || true"
+          run_remote  "firewall-cmd --direct --add-rule ipv4 nat POSTROUTING 0 -o enp0s3 -j MASQUERADE"
+          run_remote  "firewall-cmd --direct --add-rule ipv4 filter FORWARD 0 -i enp0s8 -o enp0s3 -j ACCEPT"
+          run_remote  "firewall-cmd --direct --add-rule ipv4 filter FORWARD 0 -i enp0s3 -o enp0s8 -m state --state RELATED,ESTABLISHED -j ACCEPT"
         end
         config.trigger.after :provision do
           run_remote  "puppet apply /etc/puppetlabs/code/environments/production/manifests/site.pp || true"
@@ -112,6 +115,9 @@ EOD
         #
         srv.vm.provision :shell, inline: 'service pe-puppetserver restart'
         srv.vm.provision :shell, inline: 'puppet agent -t || true'
+
+
+
       when 'pe-agent'
         srv.vm.box = 'enterprisemodules/centos-7.3-x86_64-nocm' unless server['box']
         #
