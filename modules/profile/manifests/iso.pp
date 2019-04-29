@@ -1,6 +1,6 @@
 # Make sure the OVM iso is available at /mnt/sio
 class profile::iso(
-  String $full_source = '/vagrant/software/V952529-01.iso'
+  String $full_source = '/vagrant/modules/software/files/V952529-01.iso'
 )
 {
   file {'/mnt':

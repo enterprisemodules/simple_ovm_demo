@@ -4,27 +4,73 @@ pe-master:
   cpucount:         2
   ram:              3072
   type:             pe-master
+  box:              enterprisemodules/centos-7.3-x86_64-nocm
+  virtualboxorafix: true
+
 ml-ovmmgr:
   public_ip: '192.168.56.3'
   cpucount: 2
   ram:      3072
   box:      mleonard87/oracle-linux-70-uek-x64
   type:     masterless
+  virtualboxorafix: true
+  # The installer needs to be unpacked in the ./modules/software/files/
+  # directory.
+  puppet_installer: puppet-enterprise-2017.3.2-el-7-x86_64/puppet-enterprise-installer
+  software_files:
+    - V952527-01.iso
+    - V952528-01.iso
+    - V952529-01.iso
+  additional_hosts: |
+    192.168.253.10 master.example.com puppet master
+
 pe-ovmmgr:
   public_ip: '192.168.56.3'
   cpucount: 2
   ram:      3072
   box:      mleonard87/oracle-linux-70-uek-x64
   type:     pe-agent
+  virtualboxorafix: true
+  # The installer needs to be unpacked in the ./modules/software/files/
+  # directory.
+  puppet_installer: puppet-enterprise-2017.3.2-el-7-x86_64/puppet-enterprise-installer
+  software_files:
+    - V952527-01.iso
+    - V952528-01.iso
+    - V952529-01.iso
+  additional_hosts: |
+    192.168.253.10 master.example.com puppet master
+
 ml-nfs01:
   public_ip: '192.168.56.4'
   cpucount: 1
   ram:      1024
   box:      mleonard87/oracle-linux-70-uek-x64
   type:     masterless
+  virtualboxorafix: true
+  # The installer needs to be unpacked in the ./modules/software/files/
+  # directory.
+  puppet_installer: puppet-enterprise-2017.3.2-el-7-x86_64/puppet-enterprise-installer
+  software_files:
+    - V952527-01.iso
+    - V952528-01.iso
+    - V952529-01.iso
+  additional_hosts: |
+    192.168.253.10 master.example.com puppet master
+
 pe-nfs01:
   public_ip: '192.168.56.4'
   cpucount: 1
   ram:      1024
   box:      mleonard87/oracle-linux-70-uek-x64
   type:     pe-agent
+  virtualboxorafix: true
+  # The installer needs to be unpacked in the ./modules/software/files/
+  # directory.
+  puppet_installer: puppet-enterprise-2017.3.2-el-7-x86_64/puppet-enterprise-installer
+  software_files:
+    - V952527-01.iso
+    - V952528-01.iso
+    - V952529-01.iso
+  additional_hosts: |
+    192.168.253.10 master.example.com puppet master
